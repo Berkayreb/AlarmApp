@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlarmApp.Infrastructure.Data.Repositories
 {
-    public class TodoItemRepository
+    public class AlarmService:IAlarmService
     {
     }
 }

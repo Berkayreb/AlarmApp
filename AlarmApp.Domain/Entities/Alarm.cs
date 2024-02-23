@@ -8,7 +8,7 @@ using static AlarmApp.Domain.Shared.Enums;
 
 namespace AlarmApp.Domain.Entities
 {
-    public class TodoItem
+    public class Alarm
     {
         public string Id { get; set; }
         public DateTime StartDate { get; set; }
