@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace AlarmApp.Domain.Shared
 {
-    public enum TodoStatus : byte
+    public class Enums
     {
-        Opened = 0,
-        Closed = 1
+        public enum AlarmType : byte
+        {
+            Opened = 0,
+            Closed = 1
+        }
     }
+    
 }
