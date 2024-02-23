@@ -11,6 +11,6 @@ namespace AlarmApp.Domain.Repository
     {
         Task<bool> CreateAlarm(Alarm alarm);
         Task<List<Alarm>> GetAlarmList();
-        Task<bool> DeleteAlarm(int key);
+        Task<bool> DeleteAlarm(Guid key);
     }
 }

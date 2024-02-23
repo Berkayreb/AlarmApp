@@ -26,7 +26,7 @@ namespace AlarmApp.Infrastructure.Data.Repositories
             return true;
         }
 
-        public async Task<bool> DeleteAlarm(int id)
+        public async Task<bool> DeleteAlarm(Guid id)
         {
             var deleteAlarm = await _dbService.EditData("DELETE FROM public.alarms WHERE id = @Id", new { id });
             return true;
@@ -38,7 +38,7 @@ namespace AlarmApp.Infrastructure.Data.Repositories
             return alarmList;
         }
 
-        public async Task<Alarm> GetAlarm(int id)
+        public async Task<Alarm> GetAlarm(Guid id)
         {
             var alarmList = await _dbService.GetAsync<Alarm>("SELECT * FROM public.alarms where id=@id", new { id });
             return alarmList;
