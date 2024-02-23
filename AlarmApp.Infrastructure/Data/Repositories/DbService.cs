@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
 
 namespace AlarmApp.Infrastructure.Data.Repositories
 {
@@ -18,7 +19,7 @@ namespace AlarmApp.Infrastructure.Data.Repositories
        
         public DbService(IConfiguration configuration)
         {
-            _db = new NpgsqlConnection(configuration.GetConnectionString("AlarmDb"));
+            _db = new SqlConnection(configuration.GetConnectionString("AlarmDb"));
         }
 
         public async Task<T> GetAsync<T>(string command, object parms)
