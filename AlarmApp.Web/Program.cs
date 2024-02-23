@@ -1,7 +1,14 @@
+
+using AlarmApp.DAL.Abstract;
+using AlarmApp.DAL.Concrete;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddScoped<IDbService, DbService>();
+
+builder.Services.AddScoped<IAlarmRepository, AlarmRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
  

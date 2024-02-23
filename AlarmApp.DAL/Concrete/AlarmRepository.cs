@@ -1,19 +1,20 @@
-﻿using AlarmApp.Domain.Entities;
-using AlarmApp.Domain.Repository;
+﻿
+using AlarmApp.DAL.Abstract;
+using AlarmApp.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlarmApp.Infrastructure.Data.Repositories
+namespace AlarmApp.DAL.Concrete
 {
-    public class AlarmService:IAlarmService
+    public class AlarmRepository:IAlarmRepository
     {
         private readonly IDbService _dbService;
 
 
-        public AlarmService(IDbService dbService)
+        public AlarmRepository(IDbService dbService)
         {
             _dbService = dbService;   
         }

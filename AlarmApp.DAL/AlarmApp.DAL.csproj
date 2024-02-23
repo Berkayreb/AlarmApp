@@ -10,11 +10,10 @@
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Npgsql" Version="8.0.2" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AlarmApp.Domain\AlarmApp.Domain.csproj" />
+    <ProjectReference Include="..\AlarmApp.Entity\AlarmApp.Entity.csproj" />
   </ItemGroup>
 
 </Project>

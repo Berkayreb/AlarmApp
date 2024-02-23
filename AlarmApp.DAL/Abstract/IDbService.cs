@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlarmApp.Domain.Repository
+namespace AlarmApp.DAL.Abstract
 {
     public interface IDbService
     {

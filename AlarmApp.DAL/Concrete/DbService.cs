@@ -1,4 +1,4 @@
-﻿using AlarmApp.Domain.Repository;
+﻿
 using Dapper;
 using Npgsql;
 using System;
@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
+using AlarmApp.DAL.Abstract;
 
-namespace AlarmApp.Infrastructure.Data.Repositories
+namespace AlarmApp.DAL.Concrete
 {
     public class DbService:IDbService
     {
@@ -19,7 +20,7 @@ namespace AlarmApp.Infrastructure.Data.Repositories
        
         public DbService(IConfiguration configuration)
         {
-            _db = new SqlConnection(configuration.GetConnectionString("AlarmDb"));
+            _db = new NpgsqlConnection(configuration.GetConnectionString("AlarmDb"));
         }
 
         public async Task<T> GetAsync<T>(string command, object parms)

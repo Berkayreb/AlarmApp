@@ -5,11 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlarmApp.Web", "AlarmApp.Web\AlarmApp.Web.csproj", "{C53B5E68-3F94-4999-B72A-CEFC83924CBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmApp.Domain", "AlarmApp.Domain\AlarmApp.Domain.csproj", "{C0FF7340-275D-4BF7-9F4C-0C5235C89859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlarmApp.DAL", "AlarmApp.DAL\AlarmApp.DAL.csproj", "{20F0A75E-7280-4918-881C-4FD6315D8F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmApp.Application", "AlarmApp.Application\AlarmApp.Application.csproj", "{74A88CB8-2B5B-4656-9A03-FBEE6FBFC53C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlarmApp.Entity", "AlarmApp.Entity\AlarmApp.Entity.csproj", "{7F43EB64-885C-42FA-BDFD-C7DEA4417D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmApp.Infrastructure", "AlarmApp.Infrastructure\AlarmApp.Infrastructure.csproj", "{AF06172E-7765-42F1-98FF-987FF02925C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlarmApp.BLL", "AlarmApp.BLL\AlarmApp.BLL.csproj", "{30355871-8E5C-4987-BB09-4C761363AEA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{C53B5E68-3F94-4999-B72A-CEFC83924CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C53B5E68-3F94-4999-B72A-CEFC83924CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C53B5E68-3F94-4999-B72A-CEFC83924CBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0FF7340-275D-4BF7-9F4C-0C5235C89859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0FF7340-275D-4BF7-9F4C-0C5235C89859}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0FF7340-275D-4BF7-9F4C-0C5235C89859}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0FF7340-275D-4BF7-9F4C-0C5235C89859}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74A88CB8-2B5B-4656-9A03-FBEE6FBFC53C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74A88CB8-2B5B-4656-9A03-FBEE6FBFC53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74A88CB8-2B5B-4656-9A03-FBEE6FBFC53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74A88CB8-2B5B-4656-9A03-FBEE6FBFC53C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF06172E-7765-42F1-98FF-987FF02925C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF06172E-7765-42F1-98FF-987FF02925C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF06172E-7765-42F1-98FF-987FF02925C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF06172E-7765-42F1-98FF-987FF02925C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F0A75E-7280-4918-881C-4FD6315D8F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F0A75E-7280-4918-881C-4FD6315D8F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F0A75E-7280-4918-881C-4FD6315D8F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F0A75E-7280-4918-881C-4FD6315D8F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F43EB64-885C-42FA-BDFD-C7DEA4417D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F43EB64-885C-42FA-BDFD-C7DEA4417D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F43EB64-885C-42FA-BDFD-C7DEA4417D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F43EB64-885C-42FA-BDFD-C7DEA4417D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30355871-8E5C-4987-BB09-4C761363AEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30355871-8E5C-4987-BB09-4C761363AEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30355871-8E5C-4987-BB09-4C761363AEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30355871-8E5C-4987-BB09-4C761363AEA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

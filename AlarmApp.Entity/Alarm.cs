@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AlarmApp.Domain.Shared;
-using static AlarmApp.Domain.Shared.Enums;
+using static AlarmApp.Entity.Enums;
 
-namespace AlarmApp.Domain.Entities
+
+namespace AlarmApp.Entity
 {
     public class Alarm
     {

@@ -1,4 +1,4 @@
-﻿namespace AlarmApp.Application
+﻿namespace AlarmApp.BLL
 {
     public class Class1
     {
