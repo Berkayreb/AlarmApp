@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlarmApp.Entity
+namespace AlarmApp.Entity.Model
 {
     public class Enums
     {
@@ -14,5 +14,5 @@ namespace AlarmApp.Entity
             Closed = 1
         }
     }
-    
+
 }

@@ -1,6 +1,6 @@
 ﻿using AlarmApp.BLL.Abstract;
 using AlarmApp.DAL.Abstract;
-using AlarmApp.Entity;
+using AlarmApp.Entity.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

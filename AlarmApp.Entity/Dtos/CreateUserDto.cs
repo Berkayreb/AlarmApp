@@ -4,19 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlarmApp.Entity
+namespace AlarmApp.Entity.Dtos
 {
-    public class User
+    public class CreateUserDto
     {
-        public Guid Id { get; set; }
-
         public string Mail { get; set; }
-
-        public string PasswordHash { get; set; }
-
-
-
-
-
+        public string Password { get; set; }
     }
 }
