@@ -4,6 +4,7 @@ using AlarmApp.Web.Dtos;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -50,6 +51,12 @@ namespace AlarmApp.Web.Controllers
                 }
             }
             return View();
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
