@@ -40,12 +40,13 @@ namespace AlarmApp.Web.Controllers
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity));
 
+                    return RedirectToAction("Index", "Home");
 
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Geçersiz Kullanıcı Adı veya Şifre");
-                    return View();
+                    ModelState.AddModelError(string.Empty, "Mail or password is wrong");
+                  
                 }
             }
             return View();
