@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\site.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AlarmApp.BLL\AlarmApp.BLL.csproj" />
     <ProjectReference Include="..\AlarmApp.DAL\AlarmApp.DAL.csproj" />
   </ItemGroup>
