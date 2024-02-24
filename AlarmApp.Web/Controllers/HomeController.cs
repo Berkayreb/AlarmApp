@@ -1,3 +1,4 @@
+using AlarmApp.BLL.Abstract;
 using AlarmApp.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,21 +9,23 @@ namespace AlarmApp.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        private readonly IAlarmService _alarmService;
+
+        public HomeController(ILogger<HomeController> logger,IAlarmService alarmService)
         {
             _logger = logger;
+            _alarmService = alarmService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var alarms = _alarmService.GetAlarm();
+
+            return View(alarms);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+       
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

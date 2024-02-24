@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AlarmApp.BLL\AlarmApp.BLL.csproj" />
     <ProjectReference Include="..\AlarmApp.DAL\AlarmApp.DAL.csproj" />
   </ItemGroup>
 
