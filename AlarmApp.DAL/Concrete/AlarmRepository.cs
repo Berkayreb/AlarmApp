@@ -35,7 +35,7 @@ namespace AlarmApp.DAL.Concrete
 
         public async Task<List<Alarm>> GetAlarmList()
         {
-            var alarmList = await _dbService.GetAll<Alarm>("SELECT * FROM public.alarm", new { });
+            var alarmList = await _dbService.GetAll<Alarm>("SELECT * FROM public.Alarm ", new { });
             return alarmList;
         }
 

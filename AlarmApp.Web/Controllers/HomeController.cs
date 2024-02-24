@@ -18,9 +18,9 @@ namespace AlarmApp.Web.Controllers
             _alarmService = alarmService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var alarms = _alarmService.GetAlarm();
+            var alarms = await _alarmService.GetAlarm();
 
             return View(alarms);
         }

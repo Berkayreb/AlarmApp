@@ -14,7 +14,7 @@ namespace AlarmApp.Entity
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public AlarmType Type { get; set; }
+        public int Type { get; set; }
 
         public double SetValue { get; set; }
 

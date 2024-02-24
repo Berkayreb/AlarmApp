@@ -1,7 +1,8 @@
-﻿@using AlarmApp.Entity
-
-@model AlarmApp.Entity.Alarm
+﻿@model IEnumerable<AlarmApp.Entity.Alarm>
 
 <div class="text-center">
-@Model.StartDate
+    @foreach(var item in Model)
+    {
+        <h1>@item.Id</h1>
+    }
 </div>
