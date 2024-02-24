@@ -11,32 +11,34 @@
             <h1>Login</h1>
 
             <form asp-controller="Login" asp-action="Index" method="post">
-
-            <p class="text-medium-emphasis">Test mail: admin@admin.com | password: admin </p>
-            <div class="input-group mb-3">
-                <span class="input-group-text">
-                    <svg class="icon">
-                        <use xlink:href="vendors/@@coreui/icons/svg/free.svg#cil-user"></use>
-                    </svg>
-                </span>
-                <input class="form-control" type="text" placeholder="Mail">
-            </div>
-
-            <div class="input-group mb-4">
-                <span class="input-group-text">
-                    <svg class="icon">
-                        <use xlink:href="vendors/@@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                    </svg>
-                </span>
-                <input class="form-control" type="password" placeholder="Password">
-            </div>
-
-            <div class="row">
-                <div class="col-6">
-                    <button class="btn btn-primary px-4" type="submit">Login</button>
+                <div asp-validation-summary="All"></div>
+                <p class="text-medium-emphasis">Test mail: admin@admin.com | password: admin </p>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">
+                        <svg class="icon">
+                            <use xlink:href="vendors/@@coreui/icons/svg/free.svg#cil-user"></use>
+                        </svg>
+                    </span>
+                    <input class="form-control" type="text" placeholder="Mail" asp-for="Mail">
+                    @* <span asp-validation-for="Mail" class="alert-danger"></span> *@
                 </div>
-                
-            </div>
+
+                <div class="input-group mb-4">
+                    <span class="input-group-text">
+                        <svg class="icon">
+                            <use xlink:href="vendors/@@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                        </svg>
+                    </span>
+                    <input class="form-control" type="password" placeholder="Password" asp-for="Password">
+                   @*  <span asp-validation-for="Password" class="alert-danger"></span> *@
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-primary px-4" type="submit">Login</button>
+                    </div>
+
+                </div>
             </form>
 
         </div>
@@ -44,9 +46,9 @@
     <div class="card col-md-5 text-white bg-primary py-5">
         <div class="card-body text-center">
             <div>
-                
+
                 <img class="logo" src="assets/img/logo.png" alt="user@email.com">
-                 
+
             </div>
         </div>
     </div>
