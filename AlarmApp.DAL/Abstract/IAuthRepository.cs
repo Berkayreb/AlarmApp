@@ -1,4 +1,5 @@
-﻿using AlarmApp.Entity.Dtos;
+﻿
+using AlarmApp.Entity.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace AlarmApp.DAL.Abstract
 {
     public interface IAuthRepository
     {
-        void Register(CreateUserDto userDto);
-        void Login(UserLoginDto userDto);
+        Task<bool> Register(string mail,string password);
+        Task<bool> Login(string mail,string password);
     }
 }

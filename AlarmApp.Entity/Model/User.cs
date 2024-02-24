@@ -12,7 +12,9 @@ namespace AlarmApp.Entity.Model
 
         public string Mail { get; set; }
 
-        public string PasswordHash { get; set; }
+        public byte[] PasswordHash { get; set; }
+
+        public byte[] PasswordSalt { get; set; }
 
 
 

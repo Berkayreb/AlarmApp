@@ -12,13 +12,17 @@ namespace AlarmApp.BLL.Concrete
     public class AlarmService : IAlarmService
     {
         private readonly IAlarmRepository _alarmRepository;
+        private readonly IAuthRepository _authRepository;
 
-        public AlarmService(IAlarmRepository alarmRepository)
+        public AlarmService(IAlarmRepository alarmRepository, IAuthRepository authRepository)
         {
             _alarmRepository = alarmRepository;
+            _authRepository = authRepository;
+
         }
         public async Task<List<Alarm>> GetAlarm()
         {
+          
             return await _alarmRepository.GetAlarmList();
         }
     }
