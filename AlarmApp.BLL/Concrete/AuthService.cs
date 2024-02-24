@@ -16,15 +16,15 @@ namespace AlarmApp.BLL.Concrete
             _authRepository = authRepository;
         }
 
-        public async Task<bool> Login(string username, string password)
+        public async Task<bool> Login(string mail, string password)
         {
-            return await _authRepository.Login("admin@admin.com", "admin");
+            return await _authRepository.Login(mail, password);
         }
 
         public async Task<bool> Register(string username, string password)
         {
-            return await _authRepository.Register("admin@admin.com", "admin");
-
+            //return await _authRepository.Register("admin@admin.com", "admin");
+            throw new NotImplementedException();
            
             
         }

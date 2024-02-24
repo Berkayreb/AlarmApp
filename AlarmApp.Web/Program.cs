@@ -14,6 +14,8 @@ builder.Services.AddScoped<IAlarmRepository, AlarmRepository>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
 builder.Services.AddScoped<IAlarmService, AlarmService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
  
