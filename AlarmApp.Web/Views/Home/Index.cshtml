@@ -9,6 +9,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-3">
+                        <div class="card-header">
+                            Distribution Of Alarm Status
+                        </div>
                         <div class="card-body" style="background-color:#e3e3e3ad">
                             <div class="d-flex justify-content-between">
                                 <div id="pieChartDistribution" style="margin:auto"></div>
@@ -24,6 +27,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-3">
+                        <div class="card-header">
+                            Distribution Of Open Alarms By Alarm Type
+                        </div>
                         <div class="card-body" style="background-color:#e3e3e3ad">
                             <div class="d-flex justify-content-between">
                                 <div id="pieChartDistributionTypeOpen" style="margin:auto"></div>
@@ -39,8 +45,11 @@
         </div>
         <div class="col-8">
             <div class="card mb-3">
+                <div class="card-header">
+                    Alarm List
+                </div>
                 <div class="card-body" style="background-color:#e3e3e3ad">
-
+                    
 
                     <div id="d-flex justify-content-center">
 
@@ -103,6 +112,7 @@
                 series: [{
                     argumentField: "status",
                     valueField: "count",
+                     
                     label: {
                         visible: true,
                         connector: {
@@ -119,6 +129,7 @@
                 series: [{
                     argumentField: "category",
                     valueField: "value",
+                    
                     label: {
                         visible: true,
                         connector: {
@@ -127,7 +138,8 @@
                         }
                     }
                 }],
-                palette: dataDistStatus.map(item => item.color)
+                 
+                //title: 'Category Distribution'
             });
 
             $("#gridContainer").dxDataGrid({
