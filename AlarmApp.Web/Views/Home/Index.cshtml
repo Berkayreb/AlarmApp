@@ -3,16 +3,53 @@
 
 @model IEnumerable<AlarmDto>
 
-<div class="text-center">
-    @foreach(var item in Model)
-    {
-        <h1>@item.Id</h1>
-        <h1>@item.StartDate</h1>
-        <h1>@item.EndDate</h1>
-        <h1>@item.Type</h1>
-        <h1>@item.SetValue</h1>
-        <h1>@item.ResetValue</h1>
-        <h1>@item.Status</h1>
-        <h1>@item.TypeName</h1>
-    }
+
+<div class="row">
+    <div class="col-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+
+                    <div class="text-center">
+                        @foreach (var item in Model)
+                        {
+                            <h1>@item.Id</h1>
+                            <h1>@item.StartDate</h1>
+                            <h1>@item.EndDate</h1>
+                            <h1>@item.Type</h1>
+                            <h1>@item.SetValue</h1>
+                            <h1>@item.ResetValue</h1>
+                            <h1>@item.Status</h1>
+                            <h1>@item.TypeName</h1>
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </div>
+
+
