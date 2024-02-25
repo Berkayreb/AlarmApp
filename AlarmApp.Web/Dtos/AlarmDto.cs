@@ -49,9 +49,6 @@ namespace AlarmApp.Web.Dtos
             }
         }
 
-        //public string? OnOff { get; set; }
-
-        //public string? TypeName { get; set; }
 
 
 
