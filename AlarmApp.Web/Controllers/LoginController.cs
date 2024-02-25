@@ -22,12 +22,16 @@ namespace AlarmApp.Web.Controllers
         }
         public IActionResult Index()
         {
+            //_authService.Register("root@root.com", "root");
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(LoginDto loginDto)
         {
+
+            
+
             var loginStatus = await _authService.Login(loginDto.Mail, loginDto.Password);
 
             if (ModelState.IsValid)

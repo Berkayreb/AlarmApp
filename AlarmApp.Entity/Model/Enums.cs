@@ -10,8 +10,13 @@ namespace AlarmApp.Entity.Model
     {
         public enum AlarmType : byte
         {
-            Opened = 0,
-            Closed = 1
+            Temperature = 1,
+            Vibration = 2,
+            Acoustic = 3,
+            Magnetic = 4
+
+
+
         }
     }
 

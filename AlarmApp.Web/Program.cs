@@ -9,7 +9,7 @@ using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IDbService, DbService>();
 
 builder.Services.AddScoped<IAlarmRepository, AlarmRepository>();

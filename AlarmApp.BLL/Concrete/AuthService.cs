@@ -23,8 +23,8 @@ namespace AlarmApp.BLL.Concrete
 
         public async Task<bool> Register(string username, string password)
         {
-            //return await _authRepository.Register("admin@admin.com", "admin");
-            throw new NotImplementedException();
+            return await _authRepository.Register("root@root.com", "root");
+         
            
             
         }
