@@ -6,29 +6,48 @@
 
     <div class="row">
         <div class="col-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body" style="background-color:#e3e3e3ad">
+                            <div class="d-flex justify-content-between">
+                                <div id="pieChartDistribution" style="margin:auto"></div>
+                                 
+                            </div>
 
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-
-                        <div class="text-center">
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body" style="background-color:#e3e3e3ad">
+                            <div class="d-flex justify-content-between">
+                                <div id="pieChartDistributionTypeOpen" style="margin:auto"></div>
+                                 
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="col-8">
             <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-body" style="background-color:#e3e3e3ad">
 
-                     
-                        <div id="dataGrid" >
-                            <div id="gridContainer" ></div>
 
-                        </div>
-                     
+                    <div id="d-flex justify-content-center">
+
+                        <div id="gridContainer" style="margin:auto"></div>
+
+                    </div>
+
 
 
                 </div>
@@ -50,11 +69,73 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var model = @Html.Raw(JsonConvert.SerializeObject(Model));
-            console.log(model)
+            
+            
+
+            var dataDistStatus = [
+                { status: 'Open', count: model.filter(item => item.Status === 'Open').length, color: 'red' },
+                { status: 'Closed', count: model.filter(item => item.Status === 'Closed').length, color: 'green' }
+            ];
+
+            
+
+            var openData = model.filter(item => item.Status === 'Open');
+            var categoryCounts = {};
+            var pieChartData = [];
+            for (var i = 0; i < openData.length; i++) {
+                var typeName = openData[i].TypeName;
+
+                // Eğer kategori zaten varsa 1 artır, yoksa 1 olarak ata
+                if (categoryCounts[typeName]) {
+                    categoryCounts[typeName]++;
+                } else {
+                    categoryCounts[typeName] = 1;
+                }
+            }
+            for (var key in categoryCounts) {
+                pieChartData.push({ category: key, value: categoryCounts[key] });
+            }
+            
+            console.log(pieChartData)
+
+            $("#pieChartDistribution").dxPieChart({
+                dataSource: dataDistStatus,
+                series: [{
+                    argumentField: "status",
+                    valueField: "count",
+                    label: {
+                        visible: true,
+                        connector: {
+                            visible: true,
+                            width: 1
+                        }
+                    }
+                }],
+                palette: dataDistStatus.map(item => item.color)
+            });
+
+            $("#pieChartDistributionTypeOpen").dxPieChart({
+                dataSource: pieChartData,
+                series: [{
+                    argumentField: "category",
+                    valueField: "value",
+                    label: {
+                        visible: true,
+                        connector: {
+                            visible: true,
+                            width: 1
+                        }
+                    }
+                }],
+                palette: dataDistStatus.map(item => item.color)
+            });
 
             $("#gridContainer").dxDataGrid({
                 dataSource: model,
                 keyExpr: "Id",
+                rowAlternationEnabled: true,
+                showRowLines: true,
+                showBorders: true,
                 paging: {
                     pageSize: 10,
                     pageIndex: 1    // Shows the second page
@@ -66,34 +147,61 @@
                 },
                 height: '500px',
                 filterRow: { visible: true },
-                columns: [{
-                    dataField: "StartDate",
-                    dataType: "date",
-                    width: 150,
-                },
-                {
-                    dataField: "EndDate",
-                    dataType: "date",
-                    width: 150,
-                },
-                {
-                    dataField: "Status",
-                    width: 150,
-                },
-                {
-                    dataField: "SetValue",
-                    width: 150,
-                },
-                {
-                    dataField: "ResetValue",
+                columns: [
+                    {
 
-                    width: 150,
-                },
-                {
-                    dataField: "TypeName",
+                        caption: "#",
+                        width: 50,
+                        cellTemplate: function (container, options) {
+                            var status = options.data.Status;
+                            if (status === "Open") {
+                                $("<div>")
+                                    .css("background-color", "red")
+                                    .css("width", "20px")
+                                    .css("height", "20px")
+                                    .css("border-radius", "50%")
+                                    .css("margin", "auto")
+                                    .appendTo(container);
+                            } else if (status === "Closed") {
+                                $("<div>")
+                                    .css("background-color", "green")
+                                    .css("width", "20px")
+                                    .css("height", "20px")
+                                    .css("border-radius", "50%")
+                                    .css("margin", "auto")
+                                    .appendTo(container);
+                            }
+                        }
+                    },
+                    {
+                        dataField: "StartDate",
+                        dataType: "date",
+                        width: 150,
+                    },
+                    {
+                        dataField: "EndDate",
+                        dataType: "date",
+                        width: 150,
+                    },
+                    {
+                        dataField: "Status",
+                        caption: "Status",
+                        width: 150,
+                    },
+                    {
+                        dataField: "SetValue",
+                        width: 150,
+                    },
+                    {
+                        dataField: "ResetValue",
 
-                    width: 150,
-                }
+                        width: 150,
+                    },
+                    {
+                        dataField: "TypeName",
+
+                        width: 150,
+                    }
                 ]
             });
         });
