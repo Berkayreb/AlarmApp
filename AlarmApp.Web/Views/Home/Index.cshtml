@@ -1,55 +1,116 @@
-﻿
-@using AlarmApp.Web.Dtos
+﻿@using AlarmApp.Web.Dtos
 
 @model IEnumerable<AlarmDto>
 
+<div class="dx-viewport p-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
 
-<div class="row">
-    <div class="col-4">
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
-
-                    <div class="text-center">
-                        @foreach (var item in Model)
-                        {
-                            <h1>@item.Id</h1>
-                            <h1>@item.StartDate</h1>
-                            <h1>@item.EndDate</h1>
-                            <h1>@item.Type</h1>
-                            <h1>@item.SetValue</h1>
-                            <h1>@item.ResetValue</h1>
-                            <h1>@item.Status</h1>
-                            <h1>@item.TypeName</h1>
-                        }
+                        <div class="text-center">
+                        </div>
                     </div>
+
                 </div>
 
             </div>
-
         </div>
-    </div>
-    <div class="col-4">
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
+        <div class="col-6">
+            <div class="card mb-4">
+                <div class="card-body">
                 </div>
 
             </div>
-
         </div>
+        
+
     </div>
-    <div class="col-4">
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body" style="text-align-last: center;">
+                   
+                    <div id="dataGrid">
+                        <div id="gridContainer"></div>
+
+                    </div>
+                  
                 </div>
 
             </div>
-
         </div>
-    </div>
 
+    </div>
 </div>
+
+
+
+
+
+
+@section PageScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var model = @Html.Raw(JsonConvert.SerializeObject(Model));
+            console.log(model)
+
+            $("#gridContainer").dxDataGrid({
+                dataSource: model,
+                keyExpr: "Id",
+                paging: {
+                    pageSize: 10,
+                    pageIndex: 1    // Shows the second page
+                },
+                pager: {
+                    showPageSizeSelector: true,
+                    allowedPageSizes: [10, 20, 50],
+                    showNavigationButtons: true
+                },
+                height: '500px',
+                filterRow: { visible: true },
+                columns: [{
+                    dataField: "StartDate",
+                    dataType: "date",
+                    width: 150,
+                },
+                {
+                    dataField: "EndDate",
+                    dataType: "date",
+                    width: 150,
+                },
+                {
+                    dataField: "Status",
+                    width: 150,
+                },
+                {
+                    dataField: "SetValue",
+                    width: 150,
+                },
+                {
+                    dataField: "ResetValue",
+
+                    width: 150,
+                },
+                {
+                    dataField: "TypeName",
+
+                    width: 150,
+                }
+                ]
+            });
+        });
+
+
+
+
+    </script>
+
+
+}
+
+
 
 
